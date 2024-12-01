@@ -15,7 +15,7 @@ import h5py
 import matplotlib.pyplot as plt
 
 class ImageSearcher:
-    def __init__(self, chunks_dirs=['database_chunks_part1', 'database_chunks_part2']):
+    def __init__(self, chunks_dirs=['InstanceSearch/database_chunks_part1', 'InstanceSearch/database_chunks_part2']):
         print("Đang khởi tạo mô hình...")
         self.encoder = models.vgg16(weights=models.VGG16_Weights.IMAGENET1K_V1)
         self.encoder = torch.nn.Sequential(*list(self.encoder.features.children()))
@@ -165,7 +165,7 @@ class ImageSearcher:
         plt.show()
 
 def main():
-    st.set_page_config(page_title="Image Search Demo", layout="wide")
+    st.set_page_config(page_title="Image Search", layout="wide")
     
     # Phần 1: Giới thiệu Dataset
     st.title("Demo Hệ thống Tìm kiếm Ảnh")
